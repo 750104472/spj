@@ -1,515 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.4 on darwin)" generated="20190806 22:17:26.338" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.4 on darwin)" generated="20190807 21:49:26.040" rpa="false">
 <suite id="s1" name="D-7年级1班" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班">
 <kw name="Add School Class" library="pylib.SchoolClassLib" type="setup">
 <arguments>
 <arg>1</arg>
 <arg>1班</arg>
 <arg>60</arg>
+<arg>suite_g7c1_classid</arg>
 </arguments>
-<msg timestamp="20190806 22:17:26.505" level="INFO">{'id': 192649, 'invitecode': '1926493989655', 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:26.431" endtime="20190806 22:17:26.505"></status>
+<msg timestamp="20190807 21:49:26.240" level="INFO">${suite_g7c1_classid} = 193105</msg>
+<msg timestamp="20190807 21:49:26.240" level="INFO">{'id': 193105, 'invitecode': '1931056294025', 'retcode': 0}</msg>
+<status status="PASS" starttime="20190807 21:49:26.131" endtime="20190807 21:49:26.241"></status>
 </kw>
-<suite id="s1-s1" name="修改班级1" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/修改班级1.robot">
-<test id="s1-s1-t1" name="修改班级1 - tc0000051">
-<kw name="List School Class" library="pylib.SchoolClassLib">
+<suite id="s1-s1" name="D-老师1" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/d-老师1">
+<kw name="Add School Teacher" library="pylib.SchoolTeacherLib" type="setup">
 <arguments>
+<arg>linguowei</arg>
+<arg>linguowei</arg>
 <arg>1</arg>
+<arg>${suite_g7c1_classid}</arg>
+<arg>15851398152</arg>
+<arg>750104472@qq.com</arg>
+<arg>320623199211248771</arg>
+<arg>suite_g7c1_teacherid</arg>
+</arguments>
+<msg timestamp="20190807 21:49:26.377" level="INFO">${suite_g7c1_teacherid} = 52751</msg>
+<msg timestamp="20190807 21:49:26.378" level="INFO">{'id': 52751, 'retcode': 0}</msg>
+<status status="PASS" starttime="20190807 21:49:26.246" endtime="20190807 21:49:26.378"></status>
+</kw>
+<suite id="s1-s1-s1" name="添加老师2" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/d-老师1/添加老师2.robot">
+<test id="s1-s1-s1-t1" name="添加老师2 - tc001002">
+<kw name="Add School Teacher" library="pylib.SchoolTeacherLib">
+<arguments>
+<arg>linguowei1</arg>
+<arg>linguowei1</arg>
+<arg>5</arg>
+<arg>${suite_g7c1_classid}</arg>
+<arg>15851398153</arg>
+<arg>750104473@qq.com</arg>
+<arg>320623199211248773</arg>
+<arg>suite_g7c1_teacherid</arg>
 </arguments>
 <assign>
 <var>${ret1}</var>
 </assign>
-<msg timestamp="20190806 22:17:26.639" level="INFO">{ 'gradeid': 1,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192649,
-                 'invitecode': '1926493989655',
-                 'name': '1班',
-                 'studentlimit': 60,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}</msg>
-<msg timestamp="20190806 22:17:26.639" level="INFO">${ret1} = {'gradeid': 1, 'retlist': [{'name': '1班', 'grade__name': '七年级', 'invitecode': '1926493989655', 'studentlimit': 60, 'studentnumber': 0, 'id': 192649, 'teacherlist': []}], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:26.583" endtime="20190806 22:17:26.639"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>$ret1['retlist'][0]['id']</arg>
-</arguments>
-<assign>
-<var>${classid}</var>
-</assign>
-<msg timestamp="20190806 22:17:26.645" level="INFO">${classid} = 192649</msg>
-<status status="PASS" starttime="20190806 22:17:26.639" endtime="20190806 22:17:26.645"></status>
-</kw>
-<kw name="Modify School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>${classid}</arg>
-<arg>1班啊</arg>
-<arg>80</arg>
-</arguments>
-<assign>
-<var>${ret2}</var>
-</assign>
-<msg timestamp="20190806 22:17:26.738" level="INFO">{'retcode': 0}</msg>
-<msg timestamp="20190806 22:17:26.738" level="INFO">${ret2} = {'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:26.645" endtime="20190806 22:17:26.738"></status>
+<msg timestamp="20190807 21:49:26.542" level="INFO">${suite_g7c1_teacherid} = 52752</msg>
+<msg timestamp="20190807 21:49:26.542" level="INFO">{'id': 52752, 'retcode': 0}</msg>
+<msg timestamp="20190807 21:49:26.543" level="INFO">${ret1} = {'retcode': 0, 'id': 52752}</msg>
+<status status="PASS" starttime="20190807 21:49:26.458" endtime="20190807 21:49:26.543"></status>
 </kw>
 <kw name="Should Be True" library="BuiltIn">
 <doc>Fails if the given condition is not true.</doc>
 <arguments>
-<arg>$ret2['retcode']==0</arg>
+<arg>$ret1=={"retcode": 0,"id": ${suite_g7c1_teacherid}}</arg>
 </arguments>
-<status status="PASS" starttime="20190806 22:17:26.738" endtime="20190806 22:17:26.739"></status>
+<status status="PASS" starttime="20190807 21:49:26.543" endtime="20190807 21:49:26.549"></status>
 </kw>
-<kw name="List School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-</arguments>
+<kw name="List School Teacher" library="pylib.SchoolTeacherLib">
 <assign>
-<var>${ret3}</var>
+<var>${ret2}</var>
 </assign>
-<msg timestamp="20190806 22:17:26.837" level="INFO">{ 'gradeid': 1,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192649,
-                 'invitecode': '1926493989655',
-                 'name': '1班啊',
-                 'studentlimit': 80,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}</msg>
-<msg timestamp="20190806 22:17:26.837" level="INFO">${ret3} = {'gradeid': 1, 'retlist': [{'name': '1班啊', 'grade__name': '七年级', 'invitecode': '1926493989655', 'studentlimit': 80, 'studentnumber': 0, 'id': 192649, 'teacherlist': []}], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:26.740" endtime="20190806 22:17:26.837"></status>
+<msg timestamp="20190807 21:49:26.609" level="INFO">{ 'retcode': 0,
+  'retlist': [ { 'email': '750104472@qq.com',
+                 'id': 52751,
+                 'idcardnumber': '320623199211248771',
+                 'phonenumber': '15851398152',
+                 'realname': 'linguowei',
+                 'teachclasslist': [193105],
+                 'username': 'linguowei'},
+               { 'email': '750104473@qq.com',
+                 'id': 52752,
+                 'idcardnumber': '320623199211248773',
+                 'phonenumber': '15851398153',
+                 'realname': 'linguowei1',
+                 'teachclasslist': [193105],
+                 'username': 'linguowei1'}]}</msg>
+<msg timestamp="20190807 21:49:26.609" level="INFO">${ret2} = {'retlist': [{'username': 'linguowei', 'teachclasslist': [193105], 'realname': 'linguowei', 'id': 52751, 'phonenumber': '15851398152', 'email': '750104472@qq.com', 'idcardnumber': '320623199211248771'...</msg>
+<status status="PASS" starttime="20190807 21:49:26.549" endtime="20190807 21:49:26.609"></status>
 </kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
+<kw name="Teacherlist Should Contain" library="pylib.SchoolTeacherLib">
 <arguments>
-<arg>$ret3['retlist'][0]['name']</arg>
+<arg>&amp;{ret2}[retlist]</arg>
+<arg>linguowei1</arg>
+<arg>linguowei1</arg>
+<arg>${suite_g7c1_teacherid}</arg>
+<arg>${suite_g7c1_classid}</arg>
+<arg>15851398153</arg>
+<arg>750104473@qq.com</arg>
+<arg>320623199211248773</arg>
 </arguments>
-<assign>
-<var>${classname}</var>
-</assign>
-<msg timestamp="20190806 22:17:26.839" level="INFO">${classname} = 1班啊</msg>
-<status status="PASS" starttime="20190806 22:17:26.837" endtime="20190806 22:17:26.839"></status>
+<msg timestamp="20190807 21:49:26.610" level="INFO">occur 1 times</msg>
+<status status="PASS" starttime="20190807 21:49:26.610" endtime="20190807 21:49:26.611"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
+<kw name="Delete School Teacher" library="pylib.SchoolTeacherLib" type="teardown">
 <arguments>
-<arg>${classname}</arg>
-<arg>1班啊</arg>
+<arg>${suite_g7c1_teacherid}</arg>
 </arguments>
-<status status="PASS" starttime="20190806 22:17:26.839" endtime="20190806 22:17:26.839"></status>
+<msg timestamp="20190807 21:49:26.743" level="INFO">{'retcode': 0}</msg>
+<status status="PASS" starttime="20190807 21:49:26.611" endtime="20190807 21:49:26.743"></status>
 </kw>
-<status status="PASS" starttime="20190806 22:17:26.583" endtime="20190806 22:17:26.840" critical="yes"></status>
+<status status="PASS" starttime="20190807 21:49:26.457" endtime="20190807 21:49:26.743" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190806 22:17:26.505" endtime="20190806 22:17:26.840"></status>
+<status status="PASS" starttime="20190807 21:49:26.378" endtime="20190807 21:49:26.744"></status>
 </suite>
-<suite id="s1-s2" name="修改班级2" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/修改班级2.robot">
-<test id="s1-s2-t1" name="修改班级2 - tc0000052">
-<kw name="List School Class" library="pylib.SchoolClassLib">
+<kw name="Delete School Teacher" library="pylib.SchoolTeacherLib" type="teardown">
 <arguments>
-<arg>1</arg>
+<arg>${suite_g7c1_teacherid}</arg>
 </arguments>
-<assign>
-<var>${ret1}</var>
-</assign>
-<msg timestamp="20190806 22:17:26.937" level="INFO">{ 'gradeid': 1,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192649,
-                 'invitecode': '1926493989655',
-                 'name': '1班啊',
-                 'studentlimit': 80,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}</msg>
-<msg timestamp="20190806 22:17:26.937" level="INFO">${ret1} = {'gradeid': 1, 'retlist': [{'name': '1班啊', 'grade__name': '七年级', 'invitecode': '1926493989655', 'studentlimit': 80, 'studentnumber': 0, 'id': 192649, 'teacherlist': []}], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:26.846" endtime="20190806 22:17:26.937"></status>
+<msg timestamp="20190807 21:49:26.810" level="INFO">{'reason': 'id 为`52752`的老师不存在', 'retcode': 404}</msg>
+<status status="PASS" starttime="20190807 21:49:26.747" endtime="20190807 21:49:26.810"></status>
 </kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>$ret1['retlist'][0]['id']</arg>
-</arguments>
-<assign>
-<var>${classid}</var>
-</assign>
-<msg timestamp="20190806 22:17:26.939" level="INFO">${classid} = 192649</msg>
-<status status="PASS" starttime="20190806 22:17:26.938" endtime="20190806 22:17:26.939"></status>
-</kw>
-<kw name="Modify School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>${classid}</arg>
-<arg>1班</arg>
-<arg>80</arg>
-</arguments>
-<assign>
-<var>${ret2}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.037" level="INFO">{'retcode': 0}</msg>
-<msg timestamp="20190806 22:17:27.038" level="INFO">${ret2} = {'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:26.939" endtime="20190806 22:17:27.038"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret2['retcode']==1</arg>
-</arguments>
-<msg timestamp="20190806 22:17:27.040" level="FAIL">'$ret2['retcode']==1' should be true.</msg>
-<status status="FAIL" starttime="20190806 22:17:27.038" endtime="20190806 22:17:27.040"></status>
-</kw>
-<status status="FAIL" starttime="20190806 22:17:26.845" endtime="20190806 22:17:27.040" critical="yes">'$ret2['retcode']==1' should be true.</status>
-</test>
-<status status="FAIL" starttime="20190806 22:17:26.842" endtime="20190806 22:17:27.041"></status>
+<status status="PASS" starttime="20190807 21:49:26.241" endtime="20190807 21:49:26.810"></status>
 </suite>
-<suite id="s1-s3" name="修改班级3" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/修改班级3.robot">
-<test id="s1-s3-t1" name="修改班级3 - tc0000053">
-<kw name="List School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-</arguments>
-<assign>
-<var>${ret1}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.139" level="INFO">{ 'gradeid': 1,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192649,
-                 'invitecode': '1926493989655',
-                 'name': '1班',
-                 'studentlimit': 80,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}</msg>
-<msg timestamp="20190806 22:17:27.140" level="INFO">${ret1} = {'gradeid': 1, 'retlist': [{'name': '1班', 'grade__name': '七年级', 'invitecode': '1926493989655', 'studentlimit': 80, 'studentnumber': 0, 'id': 192649, 'teacherlist': []}], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:27.047" endtime="20190806 22:17:27.140"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>$ret1['retlist'][0]['id']+1</arg>
-</arguments>
-<assign>
-<var>${classid}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.141" level="INFO">${classid} = 192650</msg>
-<status status="PASS" starttime="20190806 22:17:27.140" endtime="20190806 22:17:27.141"></status>
-</kw>
-<kw name="Modify School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>${classid}</arg>
-<arg>1班</arg>
-<arg>80</arg>
-</arguments>
-<assign>
-<var>${ret2}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.235" level="INFO">{'reason': 'id 为`192650`的班级不存在', 'retcode': 404}</msg>
-<msg timestamp="20190806 22:17:27.235" level="INFO">${ret2} = {'reason': 'id 为`192650`的班级不存在', 'retcode': 404}</msg>
-<status status="PASS" starttime="20190806 22:17:27.142" endtime="20190806 22:17:27.235"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret2['retcode']==404</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.235" endtime="20190806 22:17:27.236"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret2['reason']=='id 为`${classid}`的班级不存在'</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.236" endtime="20190806 22:17:27.237"></status>
-</kw>
-<status status="PASS" starttime="20190806 22:17:27.046" endtime="20190806 22:17:27.237" critical="yes"></status>
-</test>
-<status status="PASS" starttime="20190806 22:17:27.043" endtime="20190806 22:17:27.238"></status>
-</suite>
-<suite id="s1-s4" name="删除班级1" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/删除班级1.robot">
-<test id="s1-s4-t1" name="删除班级1 - tc0000081">
-<kw name="List School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-</arguments>
-<assign>
-<var>${ret1}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.339" level="INFO">{ 'gradeid': 1,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192649,
-                 'invitecode': '1926493989655',
-                 'name': '1班',
-                 'studentlimit': 80,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}</msg>
-<msg timestamp="20190806 22:17:27.339" level="INFO">${ret1} = {'gradeid': 1, 'retlist': [{'name': '1班', 'grade__name': '七年级', 'invitecode': '1926493989655', 'studentlimit': 80, 'studentnumber': 0, 'id': 192649, 'teacherlist': []}], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:27.243" endtime="20190806 22:17:27.339"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>$ret1['retlist'][0]['id']+1</arg>
-</arguments>
-<assign>
-<var>${classid}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.341" level="INFO">${classid} = 192650</msg>
-<status status="PASS" starttime="20190806 22:17:27.340" endtime="20190806 22:17:27.341"></status>
-</kw>
-<kw name="Delete School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>${classid}</arg>
-</arguments>
-<assign>
-<var>${ret2}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.437" level="INFO">${ret2} = {'reason': 'id 为`192650`的班级不存在', 'retcode': 404}</msg>
-<status status="PASS" starttime="20190806 22:17:27.341" endtime="20190806 22:17:27.437"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret2['retcode']==404</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.438" endtime="20190806 22:17:27.439"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret2['reason']=='id 为`${classid}`的班级不存在'</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.439" endtime="20190806 22:17:27.440"></status>
-</kw>
-<status status="PASS" starttime="20190806 22:17:27.242" endtime="20190806 22:17:27.440" critical="yes"></status>
-</test>
-<status status="PASS" starttime="20190806 22:17:27.239" endtime="20190806 22:17:27.441"></status>
-</suite>
-<suite id="s1-s5" name="删除班级2" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/删除班级2.robot">
-<test id="s1-s5-t1" name="删除班级1 - tc0000081">
-<kw name="List School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-</arguments>
-<assign>
-<var>${ret1}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.538" level="INFO">{ 'gradeid': 1,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192649,
-                 'invitecode': '1926493989655',
-                 'name': '1班',
-                 'studentlimit': 80,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}</msg>
-<msg timestamp="20190806 22:17:27.538" level="INFO">${ret1} = {'gradeid': 1, 'retlist': [{'name': '1班', 'grade__name': '七年级', 'invitecode': '1926493989655', 'studentlimit': 80, 'studentnumber': 0, 'id': 192649, 'teacherlist': []}], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:27.447" endtime="20190806 22:17:27.538"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>$ret1['retlist'][0]['id']</arg>
-</arguments>
-<assign>
-<var>${classid}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.540" level="INFO">${classid} = 192649</msg>
-<status status="PASS" starttime="20190806 22:17:27.538" endtime="20190806 22:17:27.540"></status>
-</kw>
-<kw name="Delete School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>${classid}</arg>
-</arguments>
-<assign>
-<var>${ret2}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.642" level="INFO">${ret2} = {'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:27.540" endtime="20190806 22:17:27.642"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret2['retcode']==0</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.642" endtime="20190806 22:17:27.643"></status>
-</kw>
-<kw name="List School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-</arguments>
-<assign>
-<var>${ret3}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.736" level="INFO">{'gradeid': 1, 'retcode': 0, 'retlist': []}</msg>
-<msg timestamp="20190806 22:17:27.736" level="INFO">${ret3} = {'gradeid': 1, 'retlist': [], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:27.643" endtime="20190806 22:17:27.736"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>$ret3['retlist']</arg>
-</arguments>
-<assign>
-<var>${var1}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.738" level="INFO">${var1} = []</msg>
-<status status="PASS" starttime="20190806 22:17:27.736" endtime="20190806 22:17:27.738"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$var1==[]</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.738" endtime="20190806 22:17:27.739"></status>
-</kw>
-<status status="PASS" starttime="20190806 22:17:27.446" endtime="20190806 22:17:27.739" critical="yes"></status>
-</test>
-<status status="PASS" starttime="20190806 22:17:27.443" endtime="20190806 22:17:27.740"></status>
-</suite>
-<suite id="s1-s6" name="添加班级" source="/Users/linguowei/PycharmProjects/spj/tc/d-空白数据/d-7年级1班/添加班级.robot">
-<test id="s1-s6-t1" name="添加班级2 - tc000002">
-<kw name="Add School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-<arg>2班</arg>
-<arg>60</arg>
-</arguments>
-<assign>
-<var>${ret1}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.839" level="INFO">{'id': 192650, 'invitecode': '1926507373792', 'retcode': 0}</msg>
-<msg timestamp="20190806 22:17:27.839" level="INFO">${ret1} = {'invitecode': '1926507373792', 'retcode': 0, 'id': 192650}</msg>
-<status status="PASS" starttime="20190806 22:17:27.745" endtime="20190806 22:17:27.839"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret1['retcode']==0</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.840" endtime="20190806 22:17:27.841"></status>
-</kw>
-<kw name="List School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-</arguments>
-<assign>
-<var>${ret2}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.936" level="INFO">{ 'gradeid': 1,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192650,
-                 'invitecode': '1926507373792',
-                 'name': '2班',
-                 'studentlimit': 60,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}</msg>
-<msg timestamp="20190806 22:17:27.937" level="INFO">${ret2} = {'gradeid': 1, 'retlist': [{'name': '2班', 'grade__name': '七年级', 'invitecode': '1926507373792', 'studentlimit': 60, 'studentnumber': 0, 'id': 192650, 'teacherlist': []}], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:27.841" endtime="20190806 22:17:27.937"></status>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<doc>Evaluates the given expression in Python and returns the results.</doc>
-<arguments>
-<arg>$ret2['retlist']</arg>
-</arguments>
-<assign>
-<var>${retlist}</var>
-</assign>
-<msg timestamp="20190806 22:17:27.938" level="INFO">${retlist} = [{'name': '2班', 'grade__name': '七年级', 'invitecode': '1926507373792', 'studentlimit': 60, 'studentnumber': 0, 'id': 192650, 'teacherlist': []}]</msg>
-<status status="PASS" starttime="20190806 22:17:27.937" endtime="20190806 22:17:27.938"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>{ 'grade__name': '七年级','id': $ret1['id'],'invitecode': $ret1['invitecode'],'name': '2班','studentlimit': 60,'studentnumber': 0,'teacherlist': []} in $retlist</arg>
-</arguments>
-<status status="PASS" starttime="20190806 22:17:27.938" endtime="20190806 22:17:27.939"></status>
-</kw>
 <kw name="Delete School Class" library="pylib.SchoolClassLib" type="teardown">
 <arguments>
-<arg>&amp;{ret1}[id]</arg>
+<arg>${suite_g7c1_classid}</arg>
 </arguments>
-<status status="PASS" starttime="20190806 22:17:27.940" endtime="20190806 22:17:28.044"></status>
+<msg timestamp="20190807 21:49:26.908" level="INFO">{'reason': '此班级里还有老师，需清空后才能删除', 'retcode': 1}</msg>
+<status status="PASS" starttime="20190807 21:49:26.812" endtime="20190807 21:49:26.908"></status>
 </kw>
-<status status="PASS" starttime="20190806 22:17:27.744" endtime="20190806 22:17:28.044" critical="yes"></status>
-</test>
-<test id="s1-s6-t2" name="添加班级3 - tc000003">
-<kw name="List School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-</arguments>
-<assign>
-<var>${list_before}</var>
-</assign>
-<msg timestamp="20190806 22:17:28.134" level="INFO">{'gradeid': 1, 'retcode': 0, 'retlist': []}</msg>
-<msg timestamp="20190806 22:17:28.135" level="INFO">${list_before} = {'gradeid': 1, 'retlist': [], 'retcode': 0}</msg>
-<status status="PASS" starttime="20190806 22:17:28.046" endtime="20190806 22:17:28.135"></status>
-</kw>
-<kw name="Add School Class" library="pylib.SchoolClassLib">
-<arguments>
-<arg>1</arg>
-<arg>1班</arg>
-<arg>60</arg>
-</arguments>
-<assign>
-<var>${ret1}</var>
-</assign>
-<msg timestamp="20190806 22:17:28.243" level="INFO">{'id': 192651, 'invitecode': '1926512573835', 'retcode': 0}</msg>
-<msg timestamp="20190806 22:17:28.244" level="INFO">${ret1} = {'invitecode': '1926512573835', 'retcode': 0, 'id': 192651}</msg>
-<status status="PASS" starttime="20190806 22:17:28.135" endtime="20190806 22:17:28.244"></status>
-</kw>
-<kw name="Should Be True" library="BuiltIn">
-<doc>Fails if the given condition is not true.</doc>
-<arguments>
-<arg>$ret1['recode']==1</arg>
-</arguments>
-<msg timestamp="20190806 22:17:28.245" level="FAIL">Evaluating expression 'RF_VAR_ret1 ['recode']==1' failed: KeyError: 'recode'</msg>
-<status status="FAIL" starttime="20190806 22:17:28.244" endtime="20190806 22:17:28.245"></status>
-</kw>
-<status status="FAIL" starttime="20190806 22:17:28.045" endtime="20190806 22:17:28.245" critical="yes">Evaluating expression 'RF_VAR_ret1 ['recode']==1' failed: KeyError: 'recode'</status>
-</test>
-<status status="FAIL" starttime="20190806 22:17:27.741" endtime="20190806 22:17:28.245"></status>
-</suite>
-<kw name="Delete All School Classes" library="pylib.SchoolClassLib" type="teardown">
-<msg timestamp="20190806 22:17:28.536" level="INFO">{ 'gradeid': None,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192651,
-                 'invitecode': '1926512573835',
-                 'name': '1班',
-                 'studentlimit': 60,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}
-{ 'gradeid': None,
-  'retcode': 0,
-  'retlist': [ { 'grade__name': '七年级',
-                 'id': 192651,
-                 'invitecode': '1926512573835',
-                 'name': '1班',
-                 'studentlimit': 60,
-                 'studentnumber': 0,
-                 'teacherlist': []}]}
-{'gradeid': 1, 'retcode': 0, 'retlist': []}
-{'gradeid': 1, 'retcode': 0, 'retlist': []}</msg>
-<status status="PASS" starttime="20190806 22:17:28.248" endtime="20190806 22:17:28.536"></status>
-</kw>
-<status status="FAIL" starttime="20190806 22:17:26.339" endtime="20190806 22:17:28.536"></status>
+<status status="PASS" starttime="20190807 21:49:26.041" endtime="20190807 21:49:26.908"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="2">Critical Tests</stat>
-<stat pass="5" fail="2">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="2" id="s1" name="D-7年级1班">D-7年级1班</stat>
-<stat pass="1" fail="0" id="s1-s1" name="修改班级1">D-7年级1班.修改班级1</stat>
-<stat pass="0" fail="1" id="s1-s2" name="修改班级2">D-7年级1班.修改班级2</stat>
-<stat pass="1" fail="0" id="s1-s3" name="修改班级3">D-7年级1班.修改班级3</stat>
-<stat pass="1" fail="0" id="s1-s4" name="删除班级1">D-7年级1班.删除班级1</stat>
-<stat pass="1" fail="0" id="s1-s5" name="删除班级2">D-7年级1班.删除班级2</stat>
-<stat pass="1" fail="1" id="s1-s6" name="添加班级">D-7年级1班.添加班级</stat>
+<stat pass="1" fail="0" id="s1" name="D-7年级1班">D-7年级1班</stat>
+<stat pass="1" fail="0" id="s1-s1" name="D-老师1">D-7年级1班.D-老师1</stat>
+<stat pass="1" fail="0" id="s1-s1-s1" name="添加老师2">D-7年级1班.D-老师1.添加老师2</stat>
 </suite>
 </statistics>
 <errors>

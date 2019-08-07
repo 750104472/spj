@@ -1,7 +1,7 @@
 import requests
 from cfg import g_vcode
 from pprint import pprint
-
+from robot.libraries.BuiltIn import BuiltIn
 
 class  SchoolClassLib:
     URL = "http://ci.ytesting.com/api/3school/school_classes"
@@ -21,8 +21,9 @@ class  SchoolClassLib:
 
         url = '{}/{}'.format(self.URL,classid)
         response = requests.delete(url,data=payload)
-
-        return response.json()
+        bodyDict = response.json()
+        pprint(bodyDict)
+        return bodyDict
 
 
     def list_school_class(self,gradeid=None):
@@ -45,7 +46,8 @@ class  SchoolClassLib:
         return bodyDict
 
 
-    def add_school_class(self,gradeid,name,studentlimit):
+    def add_school_class(self,gradeid,name,studentlimit,
+                         idSavedName=None):                #idSavedName是classid的全局变量
         payload = {
             'vcode'  : self.vcode,
             'action' : 'add',
@@ -57,7 +59,13 @@ class  SchoolClassLib:
 
         bodyDict = response.json()
         pprint (bodyDict,indent=2)
+
+        if idSavedName:
+            BuiltIn().set_global_variable('${%s}'%idSavedName,bodyDict['id'])
+
+
         return bodyDict
+
 
     def modify_school_class(self,classid,name,studentlimit):
         payload = {
