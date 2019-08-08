@@ -1,9 +1,10 @@
 *** Settings ***
 Library  pylib.SchoolTeacherLib
 Library  SeleniumLibrary
+Variables  cfg.py
 *** Test Cases ***
 添加老师1 - tc001001
-    ${ret1}=    add school teacher    linguowei    linguowei    1    ${suite_g7c1_classid}
+    ${ret1}=    add school teacher    linguowei    linguowei    ${g_math}    ${suite_g7c1_classid}
                                  ...   15851398152    750104472@qq.com    320623199211248771    suite_g7c1_teacherid
     should be true     $ret1=={"retcode": 0,"id": ${suite_g7c1_teacherid}}
 
