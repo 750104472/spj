@@ -12,7 +12,7 @@ Variables  cfg.py
     ${ret2}=    list school teacher
 #    ${retlist}=   evaluate   $ret2['retlist'][0]['id']
 #    should be true      $retlist==${suite_g7c1_teacherid}
-
+    log to console  &{ret2}[retlist]
     teacherlist should contain      &{ret2}[retlist]
               ...    linguowei    linguowei    ${suite_g7c1_teacherid}
               ...    ${suite_g7c1_classid}     15851398152    750104472@qq.com    320623199211248771

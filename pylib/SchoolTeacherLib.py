@@ -106,8 +106,8 @@ class  SchoolTeacherLib:
         for one in rd['retlist']:
             self.delete_school_teacher(one['id'])
 
-        #再列出七年级所有班级
-        rd =  self.list_school_teacher(1)
+        #再列出七年级所有老师
+        rd =  self.list_school_teacher()
         pprint (rd,indent=2)
 
         # 如果没有删除干净，通过异常报错给RF
@@ -147,7 +147,7 @@ class  SchoolTeacherLib:
 
 if __name__ == '__main__':
     scm = SchoolTeacherLib()
-    ret = scm.list_school_teacher(1)
+    ret = scm.list_school_teacher()
 
     # ret = scm.add_school_class(1,'新测试',77)
     # print(json.dumps(ret, indent=2))

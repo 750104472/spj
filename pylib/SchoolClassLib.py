@@ -90,7 +90,7 @@ class  SchoolClassLib:
             self.delete_school_class(one['id'])
 
         #再列出七年级所有班级
-        rd =  self.list_school_class(1)
+        rd =  self.list_school_class()
         pprint (rd,indent=2)
 
         # 如果没有删除干净，通过异常报错给RF
@@ -100,7 +100,7 @@ class  SchoolClassLib:
 
 if __name__ == '__main__':
     scm = SchoolClassLib()
-    ret = scm.list_school_class(1)
+    ret = scm.list_school_class()
 
     # ret = scm.add_school_class(1,'新测试',77)
     # print(json.dumps(ret, indent=2))
