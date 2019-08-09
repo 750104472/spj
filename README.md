@@ -1,0 +1,2 @@
+学生管理系统自动化测试框架
+开发语言：Python+Robotframework+selenium开发
