@@ -4,6 +4,7 @@ Library  SeleniumLibrary
 Variables  cfg.py
 *** Test Cases ***
 添加老师2 - tc001002
+
     ${ret1}=    add school teacher    linguowei1    linguowei1    ${g_science}    ${suite_g7c1_classid}
                                  ...   15851398153    750104473@qq.com    320623199211248773    suite_g7c2_teacherid
     should be true     $ret1=={"retcode": 0,"id": ${suite_g7c2_teacherid}}

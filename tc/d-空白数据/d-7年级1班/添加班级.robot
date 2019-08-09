@@ -18,7 +18,7 @@ Library  SeleniumLibrary
     ${list_before}=    list school class    1
 
     ${ret1}=    add school class    1     1班     60
-    should be true  $ret1['recode']==1
+    should be true  $ret1['retcode']==1
     should be true  $ret1['reason']=="duplicated class name"
 
     ${list_after}=    list school class    1

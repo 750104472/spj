@@ -13,3 +13,5 @@ g_english = 11
 g_tiyu = 12
 g_chinese = 13
 g_mathtop = 14
+
+g_teacher_login_url = 'http://ci.ytesting.com/teacher/login/login.html'
