@@ -15,3 +15,4 @@ g_chinese = 13
 g_mathtop = 14
 
 g_teacher_login_url = 'http://ci.ytesting.com/teacher/login/login.html'
+g_student_login_url = 'http://ci.ytesting.com/student/login/login.html'
