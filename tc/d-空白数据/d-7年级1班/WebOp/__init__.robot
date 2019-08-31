@@ -1,5 +1,5 @@
 *** Settings ***
-Library  pylib.WebOpLib
+Library  pylib.WebOpLib.py
 Library  pylib.SchoolTeacherLib
 Variables  cfg.py
 Suite Setup  open browser

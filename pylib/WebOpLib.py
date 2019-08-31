@@ -44,7 +44,6 @@ class WebOpLib:
 
     def get_student_homepage_info(self):
         self.wd.find_element_by_css_selector("a[href = '#/home']>li").click()
-
         self.wd.find_element_by_css_selector('.table>tbody')
         time.sleep(1)
         eles = self.wd.find_elements_by_css_selector(".ng-binding")[2:]
@@ -92,8 +91,6 @@ class WebOpLib:
         self.wd.find_element_by_id("btn_pick_question").click()
         time.sleep(2)
         self.wd.switch_to.frame("pick_questions_frame")
-
-
 
         for counter in range(3):
             questions = self.wd.find_elements_by_css_selector(".btn_pick_question")
